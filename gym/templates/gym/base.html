@@ -1,0 +1,302 @@
+﻿{% load staticfiles %}
+
+<html lang="en">
+<head>
+    <title>GYM</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+    crossorigin="anonymous">
+
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+  <title>Django Calendar App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+        body {
+            background-color: #FFFFFF;
+            height: auto;
+        }
+        .ui.menu .item img.logo {
+            margin-right: 1.5em;
+        }
+
+        .wireframe {
+            margin-top: 2em;
+        }
+        .ui.footer.segment {
+            margin: 5em 0em 0em;
+        }
+        .ui.footer{
+            width:100%;
+            position:absolute;
+            bottom:0;
+        }
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+        }
+        .container {
+          position: relative;
+          text-align: left;
+
+
+                }
+
+        .hero-ilwid {
+
+            padding-left: 0px;
+            margin-left: 0px;
+
+        }
+        .hero-ilwid {
+
+            font-size: 75px !important;
+            letter-spacing: 7px !important;
+            line-height: 1.333 !important;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+            padding-left: 3px;
+            margin-top: -40px;
+            font-family: 'frutiger-light', Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+            color:
+
+            #333;
+            text-transform: uppercase;
+            font-weight: normal;
+
+
+}
+
+        .hero-ilwid-container--left {
+
+            top: 130px;
+            -moz-transform: translateY(-50%);
+             width: 50%;
+            position: absolute;
+
+
+
+            left: 5%;
+
+            right: 5%;
+
+        }
+        .btn-primary{
+              background-color: turquoise;
+              border-color: turquoise;
+              padding: 5px 25px;
+              font-size: 20px;
+
+            }
+            .btn-primary:hover{
+              background-color: turquoise;
+              border-color: turquoise;
+
+
+            }
+        .thumbnail{
+        border-radius: 0px;
+        box-shadow: 0 2px 5px 0px;
+      }
+      .row h1{
+        margin: 40px 20px;
+      }
+      .row{
+        margin: 40px 20px;
+
+
+      }
+
+
+        .white-square {
+          position: relative;
+          text-align: center;
+
+
+                }
+        a {
+
+             color: #17a2b8;
+            text-decoration: none;
+
+        }
+         /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #555;
+            color: white;
+            padding: 15px;
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+            .calendar {
+              width: 5%;
+              margin: auto;
+              font-size: 1px;
+            }
+
+            .calendar td {
+                  width: 50px;
+                  height: 40px;
+                  padding: 20px 0px 0px 5px;
+                }
+            .fa, .fas {
+
+                font-weight: 700;
+                font-size: 10px;
+
+            }
+
+            a {
+
+                color: #17a2b8;
+                text-decoration: none;
+                font-size: 5px;
+
+            }
+
+            .row.content {
+                height: auto;
+            }
+             .hero-ilwid {
+
+            font-size: 35px !important;
+            letter-spacing: 7px !important;
+            line-height: 1.333 !important;
+            text-shadow: 0px 0px 15px rgba(255, 255, 255, 1);
+            padding-left: 3px;
+            margin-top: 0px;
+            font-family: 'frutiger-light', Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+            color:
+
+            #333;
+            text-transform: uppercase;
+            font-weight: normal;
+
+
+}
+        }
+
+    </style>
+
+</head>
+
+<body id="app-layout">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#myNavbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <!-- Branding Image -->
+            <a href="/" class="header item">
+                <img class="navbar-brand"src="{% static "img/gym.jpg" %} "><h5>MAV GYM SERVICE</h5>
+                </a>
+
+        </div>
+
+
+       <div class="collapse navbar-collapse" id="myNavbar">
+             <ul class="nav navbar-nav">
+
+
+
+        <!-- Authorized users only -->
+                    {% if user.is_authenticated and user.is_superuser %}
+
+
+
+                        <li><a href="{% url 'gym:users_list'%}" class="item">Manage Users </a></li>
+                        <li><a href="{% url 'gym:reports_list'%}" class="item">Manage Reports</a></li>
+
+
+
+                        {% elif user.is_authenticated and user.groups.all.0.name == "Customer" %}
+
+
+
+                        <li><a href="{% url 'gym:CustomerViewActivities' %}" class="item"><h5>VIEW ACTIVITIES</h5></a></li>
+                        <li> <a href="{% url 'gym:CustomerViewEquipments' %}" class="item"><h5>VIEW EQUIPMENTS</h5> </a></li>
+
+
+
+                        {% elif user.is_authenticated and user.groups.all.0.name == "Staff" %}
+
+                        <li><a href="{% url 'gym:calendar' %}" class="item"><h5>MANAGE ACTIVITIES</h5></a></li>
+                                    <li> <a href="{% url 'gym:equipment_list' %}" class="item"><h5>MANAGE EQUIPMENTS</h5></a></li>
+
+
+
+                 {% endif %}
+
+       {% comment %} </ul>{% endcomment %}
+
+             </ul>
+         <!-- Login -->
+
+         <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+
+                    <div class="ui simple dropdown item">
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                            <a href="{% url 'logout' %}"class="item">Logout</a>
+                            <a href="{% url 'password_change' %}" class="item">Change Password</a>
+                            </div>
+                    </div>
+
+
+                {% else %}
+
+                    <a href="{% url "login" %}" class="item">LOGIN</a>
+                    <a href="{% url 'social:begin' 'google-oauth2' %}" class="item">Google login</a>
+                {% endif %}
+            </ul>
+
+             </div>
+        </div>
+
+</nav>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>

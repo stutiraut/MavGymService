@@ -1,0 +1,17 @@
+{% extends 'gym/base.html' %}
+{% load static %}
+{% block content %}
+
+{% comment %}<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">{% endcomment %}
+
+<div class="clearfix">
+	<a class="btn btn-info left" href="{% url 'gym:calendar' %}?{{ prev_month }}"> Previous Month </a>
+	<a class="btn btn-info right" href="{% url 'gym:calendar' %}?{{ next_month }}"> Next Month </a>
+	<a class="btn btn-info right" href="{% url 'gym:event_new' %}"> Add New Activity  </a>
+</div>
+
+
+{{ calendar }}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'gym/base.html' %}
+{% load static %}
+{% block content %}
+<div class="ui main container">
+	<div class="clearfix">
+		<a class="btn btn-info left" href="{% url 'gym:customercalendar' %}?{{ prev_month }}"> Previous Month </a>
+		<a class="btn btn-info right" href="{% url 'gym:customercalendar' %}?{{ next_month }}"> Next Month </a>
+	</div>
+
+{{ staffcalendar }}
+</div>
+{% endblock %}

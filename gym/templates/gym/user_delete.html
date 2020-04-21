@@ -1,0 +1,12 @@
+{% extends 'gym/base.html' %}
+ {% block body_block %}
+    <h1>Delete {{ users.username }}?</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" class="btn btn-danger" value="Delete">
+        <a href="{% url 'vna:users_list' pk=users.username %} ">Cancel</a>
+
+    </form>
+
+{% endblock %}

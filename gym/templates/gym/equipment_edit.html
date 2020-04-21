@@ -1,0 +1,11 @@
+{% extends 'gym/base.html' %}
+{% comment %}{% load crispy_forms_tags %}{% endcomment %}
+{% block content %}
+      <div class="ui main container">
+    <h1>Edit Equipment</h1>
+    <form method="POST" class="user-form">{% csrf_token %}
+          {{ form.as_p}}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+      </div>
+{% endblock %}
